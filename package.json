@@ -1,0 +1,25 @@
+{
+  "name": "genetic-engineering-module",
+  "version": "1.0.1",
+  "description": "genetic engineering within JS",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+ },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chriscockburn98/genetic-engineering-module.git"
+  },
+  "author": "chriscockburn98",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chriscockburn98/genetic-engineering-module/issues"
+  },
+  "homepage": "https://github.com/chriscockburn98/genetic-engineering-module#readme",
+  "devDependencies": {
+    "@types/node": "^20.14.9",
+    "typescript": "^5.5.2"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.ts.js"
+}
