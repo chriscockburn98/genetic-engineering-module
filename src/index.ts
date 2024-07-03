@@ -14,16 +14,6 @@ function transcribeDNAtoRNA(dna: string): string {
 }
 
 /**
- * Creates the complementary DNA strand for a given DNA sequence.
- */
-function createComplementDNA(dna: string): string {
-	const complement = {
-		'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C'
-	};
-	return dna.split('').map(nucleotide => complement[nucleotide] || nucleotide).join('');
-}
-
-/**
  * Simulates a Polymerase Chain Reaction (PCR) by amplifying DNA between primers.
  */
 function simulatePCR(dna: string, primer1: string, primer2: string): string {
@@ -51,7 +41,6 @@ function mutateNucleotide(nucleotide: string): string {
 module.exports = {
 	calculateGCContent,
 	transcribeDNAtoRNA,
-	createComplementDNA,
 	simulatePCR,
 	mutateDNA
 };
