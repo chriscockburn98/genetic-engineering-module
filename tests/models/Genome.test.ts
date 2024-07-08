@@ -7,8 +7,8 @@ describe('Genome', () => {
     let geneB: Gene;
 
     beforeEach(() => {
-        geneA = new Gene('geneA', [], 'allele1');
-        geneB = new Gene('geneB', [], 'allele2');
+        geneA = new Gene('geneA', []);
+        geneB = new Gene('geneB', []);
         const genes = new Map<string, Gene>();
         genes.set(geneA.identifier, geneA);
         genes.set(geneB.identifier, geneB);
