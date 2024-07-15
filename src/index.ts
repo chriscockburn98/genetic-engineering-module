@@ -1,3 +1,8 @@
+export * from '../src/models/DNASequence';
+export * from '../src/models/Allele'
+export * from '../src/models/Gene';
+export * from '../src/models/Genome';
+
 /**
  * Calculates the GC content (percentage) of a DNA sequence.
  */
