@@ -1,5 +1,3 @@
-import { DNASequence } from './DNASequence';
-
 /**
  * Represents an allele with an identifier, DNA sequence, and trait value.
  * 
@@ -13,11 +11,11 @@ import { DNASequence } from './DNASequence';
  */
 export class Allele {
     identifier: string;
-    sequence: DNASequence;
+    sequence: string;
     traitValue: any; // Replace 'any' with a more specific type as needed
     dominance: number; // Dominance factor, e.g., 0.8
 
-    constructor(identifier: string, sequence: DNASequence, traitValue: any, dominance: number) {
+    constructor(identifier: string, sequence: string, traitValue: any, dominance: number) {
         this.identifier = identifier;
         this.sequence = sequence;
         this.traitValue = traitValue;

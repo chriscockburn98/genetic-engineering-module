@@ -2,14 +2,13 @@ import { GeneticsUtils } from '../../src/utils/GeneticsUtils';
 import { Genome } from '../../src/models/Genome';
 import { Gene } from '../../src/models/Gene';
 import { Allele } from '../../src/models/Allele';
-import { DNASequence } from '../../src/models/DNASequence';
 
 describe('GeneticsUtils.breedGenomes', () => {
     it('should create a new genome by combining alleles from two parent genomes', () => {
-        const allele1 = new Allele('blue_eyes', new DNASequence('ATCG'), 'Blue', 0.3);
-        const allele2 = new Allele('brown_eyes', new DNASequence('TAGC'), 'Brown', 0.8);
-        const allele3 = new Allele('green_eyes', new DNASequence('CGTA'), 'Green', 0.5);
-        const allele4 = new Allele('hazel_eyes', new DNASequence('GCTA'), 'Hazel', 0.6);
+        const allele1 = new Allele('blue_eyes', 'ATCG', 'Blue', 0.3);
+        const allele2 = new Allele('brown_eyes', 'TAGC', 'Brown', 0.8);
+        const allele3 = new Allele('green_eyes', 'CGTA', 'Green', 0.5);
+        const allele4 = new Allele('hazel_eyes', 'GCTA', 'Hazel', 0.6);
 
         const gene1 = new Gene('eye_color', [allele1, allele2]);
         const gene2 = new Gene('eye_color', [allele3, allele4]);
@@ -36,15 +35,15 @@ describe('GeneticsUtils.breedGenomes', () => {
 
 describe('GeneticsUtils.breedGenomes', () => {
     it('should create a new genome by combining alleles from two parent genomes', () => {
-        const eyeAllele1 = new Allele('blue_eyes', new DNASequence('ATCG'), 'Blue', 0.3);
-        const eyeAllele2 = new Allele('brown_eyes', new DNASequence('TAGC'), 'Brown', 0.8);
-        const eyeAllele3 = new Allele('green_eyes', new DNASequence('CGTA'), 'Green', 0.5);
-        const eyeAllele4 = new Allele('hazel_eyes', new DNASequence('GCTA'), 'Hazel', 0.6);
+        const eyeAllele1 = new Allele('blue_eyes', 'ATCG', 'Blue', 0.3);
+        const eyeAllele2 = new Allele('brown_eyes', 'TAGC', 'Brown', 0.8);
+        const eyeAllele3 = new Allele('green_eyes', 'CGTA', 'Green', 0.5);
+        const eyeAllele4 = new Allele('hazel_eyes', 'GCTA', 'Hazel', 0.6);
 
-        const hairAllele1 = new Allele('blue_hair', new DNASequence('ATCG'), 'Blue', 0.3);
-        const hairAllele2 = new Allele('brown_hair', new DNASequence('TAGC'), 'Brown', 0.8);
-        const hairAllele3 = new Allele('green_hair', new DNASequence('CGTA'), 'Green', 0.5);
-        const hairAllele4 = new Allele('hazel_hair', new DNASequence('GCTA'), 'Hazel', 0.6);
+        const hairAllele1 = new Allele('blue_hair', 'ATCG', 'Blue', 0.3);
+        const hairAllele2 = new Allele('brown_hair', 'TAGC', 'Brown', 0.8);
+        const hairAllele3 = new Allele('green_hair', 'CGTA', 'Green', 0.5);
+        const hairAllele4 = new Allele('hazel_hair', 'GCTA', 'Hazel', 0.6);
 
         const eyeGene1 = new Gene('eye_color', [eyeAllele1, eyeAllele2]);
         const eyeGene2 = new Gene('eye_color', [eyeAllele3, eyeAllele4]);
@@ -86,12 +85,12 @@ describe('GeneticsUtils.breedGenomes', () => {
 
 describe('GeneticsUtils.breedGenomes', () => {
     it('should handle incomplete dominance for color traits and random selection for non-color traits', () => {
-        const eyeAllele1 = new Allele('blue_eyes', new DNASequence('ATCG'), '#0000FF', 0.5);
-        const eyeAllele2 = new Allele('brown_eyes', new DNASequence('TAGC'), '#8B4513', 0.5);
-        const eyeAllele3 = new Allele('green_eyes', new DNASequence('CGTA'), '#008000', 0.8);
-        const eyeAllele4 = new Allele('hazel_eyes', new DNASequence('GCTA'), '#A52A2A', 0.3);
-        const speedAllele1 = new Allele('fast', new DNASequence('ATCG'), 'fast', 0.5);
-        const speedAllele2 = new Allele('slow', new DNASequence('TAGC'), 'slow', 0.5);
+        const eyeAllele1 = new Allele('blue_eyes', 'ATCG', '#0000FF', 0.5);
+        const eyeAllele2 = new Allele('brown_eyes', 'TAGC', '#8B4513', 0.5);
+        const eyeAllele3 = new Allele('green_eyes', 'CGTA', '#008000', 0.8);
+        const eyeAllele4 = new Allele('hazel_eyes', 'GCTA', '#A52A2A', 0.3);
+        const speedAllele1 = new Allele('fast', 'ATCG', 'fast', 0.5);
+        const speedAllele2 = new Allele('slow', 'TAGC', 'slow', 0.5);
 
         const eyeGene1 = new Gene('eye_color', [eyeAllele1, eyeAllele2]);
         const eyeGene2 = new Gene('eye_color', [eyeAllele3, eyeAllele4]);

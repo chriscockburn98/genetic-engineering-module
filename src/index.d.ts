@@ -4,18 +4,12 @@ export function transcribeDNAtoRNA(dna: string): string;
 export function simulatePCR(dna: string, primer1: string, primer2: string): string;
 export function mutateDNA(dna: string, mutationRate: number): string;
 
-export class DNASequence {
-    sequence: string;
-    constructor(sequence: string);
-    toString(): string;
-}
-
 export class Allele {
     identifier: string;
-    sequence: DNASequence;
+    sequence: string;
     traitValue: any;
     dominance: number;
-    constructor(identifier: string, sequence: DNASequence, traitValue: any, dominance: number);
+    constructor(identifier: string, sequence: string, traitValue: any, dominance: number);
 }
 
 export class Gene {
