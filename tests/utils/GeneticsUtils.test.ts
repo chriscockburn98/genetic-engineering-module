@@ -25,10 +25,10 @@ describe('GeneticsUtils.breedGenomes', () => {
         expect(offspringGene).not.toBeNull();
         if (offspringGene) {
             expect(offspringGene.alleles.length).toBe(2);
-            expect([allele1.identifier, allele2.identifier, allele3.identifier, allele4.identifier])
-                .toContain(offspringGene.alleles[0].identifier);
-            expect([allele1.identifier, allele2.identifier, allele3.identifier, allele4.identifier])
-                .toContain(offspringGene.alleles[1].identifier);
+            expect([allele1.key, allele2.key, allele3.key, allele4.key])
+                .toContain(offspringGene.alleles[0].key);
+            expect([allele1.key, allele2.key, allele3.key, allele4.key])
+                .toContain(offspringGene.alleles[1].key);
         }
     });
 });
@@ -74,10 +74,10 @@ describe('GeneticsUtils.breedGenomes', () => {
             //     offspring_hair_color: offspringGenome.getGene('hair_color')
             // })
             expect(offspringGene.alleles.length).toBe(2);
-            expect([eyeAllele1.identifier, eyeAllele2.identifier, eyeAllele3.identifier, eyeAllele4.identifier])
-                .toContain(offspringGene.alleles[0].identifier);
-            expect([eyeAllele1.identifier, eyeAllele2.identifier, eyeAllele3.identifier, eyeAllele4.identifier])
-                .toContain(offspringGene.alleles[1].identifier);
+            expect([eyeAllele1.key, eyeAllele2.key, eyeAllele3.key, eyeAllele4.key])
+                .toContain(offspringGene.alleles[0].key);
+            expect([eyeAllele1.key, eyeAllele2.key, eyeAllele3.key, eyeAllele4.key])
+                .toContain(offspringGene.alleles[1].key);
         }
     });
 });

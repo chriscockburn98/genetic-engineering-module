@@ -14,11 +14,11 @@ import { Allele } from './Allele';
  * 
  */
 export class Gene implements IGene {
-    identifier: string;
+    key: string;
     alleles: Allele[];
 
-    constructor(identifier: string, alleles: Allele[]) {
-        this.identifier = identifier;
+    constructor(key: string, alleles: Allele[]) {
+        this.key = key;
         this.alleles = alleles;
     }
 
@@ -27,7 +27,7 @@ export class Gene implements IGene {
             const [allele1, allele2] = this.alleles;
 
             // If both alleles are the same, return their trait value
-            if (allele1.identifier === allele2.identifier) {
+            if (allele1.key === allele2.key) {
                 return allele1.traitValue;
             }
 
@@ -50,11 +50,11 @@ export class Gene implements IGene {
         return this.alleles[0].traitValue;
     }
 
-    isColorTrait(traitValue: any): boolean {
+    private isColorTrait(traitValue: any): boolean {
         return typeof traitValue === 'string' && traitValue.startsWith('#');
     }
 
-    blendColors(color1: string, color2: string): string {
+    private blendColors(color1: string, color2: string): string {
         const hexToDecimal = (hex: string) => parseInt(hex.slice(1), 16);
         const decimalToHex = (decimal: number) => decimal.toString(16).padStart(6, '0');
 
@@ -67,4 +67,12 @@ export class Gene implements IGene {
 
         return `#${decimalToHex((r << 16) | (g << 8) | b)}`;
     }
+
+    toObject() {
+        return {
+            key: this.key,
+            alleles: this.alleles.map(allele => allele.toObject()),
+        };
+    }
+
 }

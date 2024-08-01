@@ -12,15 +12,26 @@ import { IAllele } from "../interfaces/Allele";
  * - etc.
  */
 export class Allele implements IAllele {
-    identifier: string;
+    key: string;
     sequence: string;
     traitValue: any; // Replace 'any' with a more specific type as needed
     dominance: number; // Dominance factor, e.g., 0.8
 
-    constructor(identifier: string, sequence: string, traitValue: any, dominance: number) {
-        this.identifier = identifier;
+    constructor(key: string, sequence: string, traitValue: any, dominance: number) {
+        this.key = key;
         this.sequence = sequence;
         this.traitValue = traitValue;
         this.dominance = dominance;
     }
+
+    toObject() {
+        return {
+            key: this.key,
+            sequence: this.sequence,
+            traitValue: this.traitValue,
+            dominance: this.dominance,
+        };
+    }
+
+
 }

@@ -20,10 +20,18 @@ export class Genome implements IGenome {
     }
 
     addGene(gene: Gene) {
-        this.genes.set(gene.identifier, gene);
+        this.genes.set(gene.key, gene);
     }
 
-    getGene(identifier: string): Gene | null {
-        return this.genes.get(identifier) || null;
+    getGene(key: string): Gene | null {
+        return this.genes.get(key) || null;
+    }
+
+    toObject() {
+        const genesObject: any = {};
+        this.genes.forEach((gene, key) => {
+            genesObject[key] = gene.toObject();
+        });
+        return { genes: genesObject };
     }
 }

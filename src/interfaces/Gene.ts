@@ -1,9 +1,10 @@
 import { IAllele } from "./Allele";
 
 interface IGene {
-    identifier: string;
+    key: string;
     alleles: IAllele[];
     determineTrait(): any;
+    toObject(): any;
 }
 
 export { IGene };

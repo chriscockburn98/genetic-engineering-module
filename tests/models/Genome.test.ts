@@ -10,8 +10,8 @@ describe('Genome', () => {
         geneA = new Gene('geneA', []);
         geneB = new Gene('geneB', []);
         const genes = new Map<string, Gene>();
-        genes.set(geneA.identifier, geneA);
-        genes.set(geneB.identifier, geneB);
+        genes.set(geneA.key, geneA);
+        genes.set(geneB.key, geneB);
         genome = new Genome(genes);
     });
 

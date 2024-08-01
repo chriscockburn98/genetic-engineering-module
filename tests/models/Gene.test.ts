@@ -7,7 +7,7 @@ describe('Gene', () => {
         const allele2 = new Allele('allele2', 'TCGA', 'trait2', 0.5);
         const gene = new Gene('gene1', [allele1, allele2]);
 
-        expect(gene.identifier).toBe('gene1');
+        expect(gene.key).toBe('gene1');
         expect(gene.alleles.length).toBe(2);
         expect(gene.alleles).toContain(allele1);
     });
