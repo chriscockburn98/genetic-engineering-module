@@ -1,3 +1,5 @@
+import { IAllele } from "../interfaces/Allele";
+
 /**
  * Represents an allele with an identifier, DNA sequence, and trait value.
  * 
@@ -9,7 +11,7 @@
  * - Brown hair
  * - etc.
  */
-export class Allele {
+export class Allele implements IAllele {
     identifier: string;
     sequence: string;
     traitValue: any; // Replace 'any' with a more specific type as needed

@@ -1,3 +1,4 @@
+import { IGene } from '../interfaces/Gene';
 import { Allele } from './Allele';
 
 /**
@@ -12,7 +13,7 @@ import { Allele } from './Allele';
  * - etc.
  * 
  */
-export class Gene {
+export class Gene implements IGene {
     identifier: string;
     alleles: Allele[];
 

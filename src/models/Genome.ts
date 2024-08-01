@@ -1,3 +1,4 @@
+import { IGenome } from '../interfaces/Genome';
 import { Gene } from './Gene';
 
 /**
@@ -11,7 +12,7 @@ import { Gene } from './Gene';
  * - etc.
  * 
  */
-export class Genome {
+export class Genome implements IGenome {
     genes: Map<string, Gene>;
 
     constructor(genes: Map<string, Gene>) {
