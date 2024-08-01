@@ -27,11 +27,7 @@ export class Genome implements IGenome {
         return this.genes.get(key) || null;
     }
 
-    toObject() {
-        const genesObject: any = {};
-        this.genes.forEach((gene, key) => {
-            genesObject[key] = gene.toObject();
-        });
-        return { genes: genesObject };
+    toArray() {
+        return Array.from(this.genes.values()).map(gene => gene.toObject());
     }
 }

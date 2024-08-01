@@ -4,7 +4,7 @@ interface IGenome {
     genes: Map<string, IGene>;
     addGene(gene: IGene): void;
     getGene(key: string): IGene | null;
-    toObject(): any;
+    toArray(): any[];
 }
 
 export { IGenome };
