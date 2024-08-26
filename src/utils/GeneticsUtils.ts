@@ -19,7 +19,7 @@ export class GeneticsUtils {
             }
         });
 
-        return new Genome(offspringGenome);
+        return new Genome('offspring', offspringGenome);
     }
 
 }

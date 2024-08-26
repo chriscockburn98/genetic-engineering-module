@@ -12,7 +12,7 @@ describe('Genome', () => {
         const genes = new Map<string, Gene>();
         genes.set(geneA.key, geneA);
         genes.set(geneB.key, geneB);
-        genome = new Genome(genes);
+        genome = new Genome('genome', genes);
     });
 
     test('should return the correct gene by identifier', () => {

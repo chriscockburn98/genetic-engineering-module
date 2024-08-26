@@ -13,9 +13,11 @@ import { Gene } from './Gene';
  * 
  */
 export class Genome implements IGenome {
+    id: any;
     genes: Map<string, Gene>;
 
-    constructor(genes: Map<string, Gene>) {
+    constructor(id: any, genes: Map<string, Gene>) {
+        this.id = id;
         this.genes = genes;
     }
 

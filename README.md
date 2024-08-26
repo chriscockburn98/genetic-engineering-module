@@ -7,7 +7,7 @@ The Genetic Engineering Module is a JavaScript library designed to simulate gene
 ## Installation
 
 Install the module via npm:
-`npm install genetic-engineering-module`
+`yarn genetic-engineering-module`
 
 ## Concepts
 

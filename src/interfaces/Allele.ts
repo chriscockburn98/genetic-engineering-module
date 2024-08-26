@@ -4,6 +4,7 @@ interface IAllele {
     traitValue: any;
     dominance: number;
     toObject(): any;
+    parentId: any;
 }
 
 export { IAllele };

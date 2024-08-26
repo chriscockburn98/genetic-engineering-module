@@ -16,8 +16,10 @@ export class Allele implements IAllele {
     sequence: string;
     traitValue: any; // Replace 'any' with a more specific type as needed
     dominance: number; // Dominance factor, e.g., 0.8
+    parentId: any;
 
-    constructor(key: string, sequence: string, traitValue: any, dominance: number) {
+    constructor(key: string, sequence: string, traitValue: any, dominance: number, parentId: any) {
+        this.parentId = parentId;
         this.key = key;
         this.sequence = sequence;
         this.traitValue = traitValue;
@@ -30,6 +32,7 @@ export class Allele implements IAllele {
             sequence: this.sequence,
             traitValue: this.traitValue,
             dominance: this.dominance,
+            parentId: this.parentId
         };
     }
 
