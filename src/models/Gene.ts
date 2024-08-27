@@ -22,32 +22,34 @@ export class Gene implements IGene {
         this.alleles = alleles;
     }
 
-    determineTrait(): any {
+    determineTrait(): { traitValue: any, parentId?: string } {
         if (this.alleles.length === 2) {
             const [allele1, allele2] = this.alleles;
 
             // If both alleles are the same, return their trait value
             if (allele1.key === allele2.key) {
-                return allele1.traitValue;
+                // randomly select parent
+                const randomParent = Math.random() < 0.5 ? allele1 : allele2;
+                return { traitValue: randomParent.traitValue, parentId: randomParent.parentId };
             }
 
             // Calculate trait based on dominance factors
             if (allele1.dominance > allele2.dominance) {
-                return allele1.traitValue;
+                return { traitValue: allele1.traitValue, parentId: allele1.parentId };
             } else if (allele2.dominance > allele1.dominance) {
-                return allele2.traitValue;
+                return { traitValue: allele2.traitValue, parentId: allele2.parentId };
             } else {
                 // In case of equal dominance, apply incomplete dominance or random selection
                 if (this.isColorTrait(allele1.traitValue) && this.isColorTrait(allele2.traitValue)) {
-                    return this.blendColors(allele1.traitValue, allele2.traitValue);
+                    return { traitValue: this.blendColors(allele1.traitValue, allele2.traitValue) };
                 } else {
-                    return Math.random() < 0.5 ? allele1.traitValue : allele2.traitValue;
+                    return Math.random() < 0.5 ? { traitValue: allele1.traitValue, parentId: allele1.parentId } : { traitValue: allele2.traitValue, parentId: allele1.parentId };
                 }
             }
         }
 
         // Default to the trait value of the first allele if only one allele is present
-        return this.alleles[0].traitValue;
+        return { traitValue: this.alleles[0].traitValue, parentId: this.alleles[0].parentId };
     }
 
     private isColorTrait(traitValue: any): boolean {

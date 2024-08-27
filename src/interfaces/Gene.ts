@@ -3,7 +3,7 @@ import { IAllele } from "./Allele";
 interface IGene {
     key: string;
     alleles: IAllele[];
-    determineTrait(): any;
+    determineTrait(): { traitValue: any, parentId?: string };
     toObject(): any;
 }
 

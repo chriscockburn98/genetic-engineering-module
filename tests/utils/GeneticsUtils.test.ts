@@ -101,8 +101,8 @@ describe('GeneticsUtils.breedGenomes', () => {
 
         const offspringGenome = GeneticsUtils.breedGenomes(parent1, parent2);
 
-        const offspringEyeTrait = offspringGenome.getGene('eye_color')?.determineTrait();
-        const offspringSpeedTrait = offspringGenome.getGene('speed')?.determineTrait();
+        const offspringEyeTrait = offspringGenome.getGene('eye_color')?.determineTrait().traitValue;
+        const offspringSpeedTrait = offspringGenome.getGene('speed')?.determineTrait().traitValue
 
         console.log('Offspring Eye Color:', offspringEyeTrait);
         console.log('Offspring Speed:', offspringSpeedTrait);
